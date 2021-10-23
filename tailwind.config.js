@@ -1,9 +1,9 @@
 module.exports = {
   mode: "jit",
-  purge: {
-    layers: [],
-    content: ["./src/**/*.tsx"],
-  },
+  purge: [
+    './public/**/*.html',
+    './src/**/*.{js,jsx,ts,tsx,vue}',
+  ],
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {},
