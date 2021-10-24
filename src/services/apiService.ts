@@ -18,6 +18,8 @@ export const clearCache = () => {
 };
 
 const API_ROOT = process.env.REACT_APP_API_URL || "http://daihocy.xyz";
+
+console.log(process.env)
 const httpsAgent = new https.Agent({
   rejectUnauthorized: false,
 });
@@ -47,7 +49,7 @@ const _callApiFactory = (ROOT: string) => {
 };
 export default _callApiFactory(API_ROOT);
 
-export function callApiNotDomain(options: AxiosRequestConfig, schema?: any) {
+export function callApiNotDomain(options: AxiosRequestConfig) {
   const axiosInstance = axios.create({
     headers: {
       "Content-Type": "application/json", Accept: "application/json",
