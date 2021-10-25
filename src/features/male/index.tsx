@@ -5,8 +5,9 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormInfo, { FormInfoSchema, FormInfoValues } from "components/form/info";
 import MuiButton from '@material-ui/core/Button';
+import FormStimulant, { FormStimulantValues } from "../../components/form/stimulant";
 
-type FormValues = FormInfoValues;
+type FormValues = FormInfoValues & FormStimulantValues;
 
 const Male: React.FC<{}>= ()=> {
   const location = useLocation();
@@ -18,6 +19,7 @@ const Male: React.FC<{}>= ()=> {
     control,
     handleSubmit,
     formState: { errors },
+    watch
   } = useForm<FormValues>({
     mode: "onSubmit",
     resolver: yupResolver(FormSchema),
@@ -34,7 +36,8 @@ const Male: React.FC<{}>= ()=> {
   return (
     <div className="pt-16">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FormInfo control={control} errors={errors}/>
+        <FormInfo watch={watch} control={control} errors={errors}/>
+        <FormStimulant watch={watch} control={control} errors={errors} />
         <div className="flex flex-col items-center justify-center">
           <MuiButton color={"primary"} type="submit"  className="w-12 bg-blue-800" variant="contained">Lưu</MuiButton>
         </div>

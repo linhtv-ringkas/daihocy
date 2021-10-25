@@ -1,5 +1,5 @@
 import React from "react";
-import { Control, Controller, FieldErrors } from "react-hook-form";
+import { Control, Controller, FieldErrors, UseFormWatch } from "react-hook-form";
 import Input from "components/control/input";
 import { get } from "lodash";
 import * as yup from "yup";
@@ -34,7 +34,8 @@ export const FormInfoSchema = {
 interface Props {
   control: Control<any>;
   errors:  FieldErrors;
-  defaultValue?: FormInfoValues
+  defaultValue?: FormInfoValues;
+  watch: UseFormWatch<any>;
 }
 
 const YEAR_LIST = (()=> {
@@ -73,10 +74,11 @@ const JOB = [
   },
 ]
 
-const FormInfo: React.FC<Props>= ({control, errors, defaultValue})=> {
+const FormInfo: React.FC<Props>= ({control, errors, defaultValue,watch})=> {
+  const watchIsFamily = watch("isFamily", false);
   return (
-    <div className="">
-      <div>THÔNG TIN CHUNG</div>
+    <div className="mb-6">
+      <div className="font-bold text-2xl mb-6">THÔNG TIN CHUNG</div>
       <div className="grid grid-cols-1 sm:grid-cols-6 gap-4">
         <Controller
           name="phone"
@@ -122,6 +124,7 @@ const FormInfo: React.FC<Props>= ({control, errors, defaultValue})=> {
             />
           )}
         />
+        {watchIsFamily &&
         <Controller
           name="familyPhone"
           control={control}
@@ -136,7 +139,7 @@ const FormInfo: React.FC<Props>= ({control, errors, defaultValue})=> {
               {...others}
             />
           )}
-        />
+        />}
         <Controller
           name="address"
           control={control}
