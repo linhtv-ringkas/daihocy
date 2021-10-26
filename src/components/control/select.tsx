@@ -4,6 +4,7 @@ import MuiSelect, { SelectProps as MuiSelectProps, } from "@material-ui/core/Sel
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import MuiMenuItem, { MenuItemProps as MuiMenuItemProps, } from "@material-ui/core/MenuItem";
 import Input, { Props as InputProps } from "components/control/input";
+import { OutlinedInput } from "@material-ui/core";
 
 export interface Props extends Omit<MuiSelectProps, "inputProps"> {
   options: any[];
@@ -20,6 +21,43 @@ export interface Props extends Omit<MuiSelectProps, "inputProps"> {
 export interface ItemProps extends Omit<MuiMenuItemProps, "button"> { }
 
 const useSelectStype = makeStyles({
+  input: {
+    background: "#f5f7fa",
+    borderRadius: "0.75rem",
+    border: "1px solid transparent",
+    fontSize: "0.875rem",
+    "& .MuiOutlinedInput-notchedOutline": {
+      border: 0,
+    },
+    "& .MuiOutlinedInput-input": {
+      paddingLeft: 20,
+      color: "#4d4d4d",
+      "&:hover": {
+        background: "#f5f7fa",
+      },
+      "&:focus": {
+        background: "#f5f7fa",
+      },
+      "&:active": {
+        background: "#f5f7fa",
+      },
+      "&.Mui-focused": {
+        background: "#f5f7fa",
+      },
+      "&.Mui-error": {
+        borderColor: "#f53126",
+      },
+      "&.Mui-disabled": {
+        background: "#f5f7fa",
+      },
+      "&:before": {
+        display: "none",
+      },
+      "&:after": {
+        display: "none",
+      },
+    },
+  },
   select: {
     "&:hover": {
       background: "#f5f7fa",
@@ -98,7 +136,7 @@ const Select: React.FC<Props> = ({
   const menuClasses = useMenuStyle({ width, height });
   return (
     <MuiSelect
-      input={<Input {...inputProps} />}
+      input={inputProps?.label?.length ? <Input {...inputProps} /> : <OutlinedInput classes={{root: classes.input}} />}
       IconComponent={KeyboardArrowDownIcon}
       classes={{
         select: classes.select,

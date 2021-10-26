@@ -5,9 +5,11 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormInfo, { FormInfoSchema, FormInfoValues } from "components/form/info";
 import MuiButton from '@material-ui/core/Button';
-import FormStimulant, { FormStimulantValues } from "../../components/form/stimulant";
+import FormStimulant, { FormStimulantValues } from "components/form/stimulant";
+import FormClinicalInfo, { FormClinicalInfoValues } from "components/form/clinicalInfo";
+import FormSemenChartInfo, { FormSemenChartInfoValues } from "components/form/semenChartInfo";
 
-type FormValues = FormInfoValues & FormStimulantValues;
+type FormValues = FormInfoValues & FormStimulantValues & FormClinicalInfoValues & FormSemenChartInfoValues;
 
 const Male: React.FC<{}>= ()=> {
   const location = useLocation();
@@ -15,15 +17,11 @@ const Male: React.FC<{}>= ()=> {
     ...FormInfoSchema
   });
   //form
-  const {
-    control,
-    handleSubmit,
-    formState: { errors },
-    watch
-  } = useForm<FormValues>({
+  const formControl = useForm<FormValues>({
     mode: "onSubmit",
     resolver: yupResolver(FormSchema),
   });
+  const { handleSubmit } = formControl;
 
   useEffect(()=> {
     console.log("location", location)
@@ -34,10 +32,13 @@ const Male: React.FC<{}>= ()=> {
     console.log("data", data)
   }
   return (
-    <div className="pt-16">
+    <div className="pt-8 mb-32">
+      <h2 className="text-center text-4xl font-bold pb-8">THÔNG TIN BỆNH NHÂN (NAM)</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <FormInfo watch={watch} control={control} errors={errors}/>
-        <FormStimulant watch={watch} control={control} errors={errors} />
+        <FormInfo formControl={formControl}/>
+        <FormStimulant formControl={formControl} />
+        <FormClinicalInfo formControl={formControl} />
+        <FormSemenChartInfo formControl={formControl} />
         <div className="flex flex-col items-center justify-center">
           <MuiButton color={"primary"} type="submit"  className="w-12 bg-blue-800" variant="contained">Lưu</MuiButton>
         </div>

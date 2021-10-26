@@ -1,5 +1,5 @@
 import React from "react";
-import { Control, Controller, FieldErrors, UseFormWatch } from "react-hook-form";
+import { Controller, UseFormReturn } from "react-hook-form";
 import { get } from "lodash";
 import { Checkbox, FormControlLabel } from "@material-ui/core";
 import Select from "../control/select";
@@ -34,13 +34,17 @@ const NUMBER_ARRAY = [{
 
 
 interface Props {
-  control: Control<any>;
-  errors: FieldErrors;
-  watch: UseFormWatch<any>
-  defaultValue?: FormStimulantValues
+  defaultValue?: FormStimulantValues;
+  formControl: UseFormReturn<any>
 }
 
-const FormStimulant: React.FC<Props> = ({control, errors, defaultValue, watch}) => {
+const FormStimulant: React.FC<Props> = ({formControl, defaultValue}) => {
+  const {
+    control,
+    formState: { errors },
+    watch
+  } = formControl;
+
   const watchIsCigarette = watch("isCigarette", false);
   const watchIsPipeTobacco = watch("isPipeTobacco", false);
   const watchIsBeer = watch("isBeer", false);
@@ -48,7 +52,7 @@ const FormStimulant: React.FC<Props> = ({control, errors, defaultValue, watch}) 
   const watchStimulantType = watch("stimulantType", false);
 
   return (<div className="mb-6">
-    <div className="font-bold text-2xl mb-6">CHẤT KÍCH THÍCH</div>
+    <div className="font-bold text-2xl mb-6 uppercase">CHẤT KÍCH THÍCH</div>
     <div className="grid grid-cols-1 sm:grid-cols-6 gap-4">
       <Controller
         name="isCigarette"
