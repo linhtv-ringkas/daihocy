@@ -31,6 +31,14 @@ module.exports = {
       backgroundImage: {
         'home-small': "url('./assets/images/bg-home-small.jpg')",
         'home-large': "url('./assets/images/bg-home-large.jpg')",
+        'male-small': "url('./assets/images/male-small.jpg')",
+        'male-large': "url('./assets/images/male-large.jpg')",
+        'female-small': "url('./assets/images/female-small.jpg')",
+        'female-large': "url('./assets/images/female-large.jpg')",
+        'pregnant-small': "url('./assets/images/pregnant-small.jpg')",
+        'pregnant-large': "url('./assets/images/pregnant-large.jpg')",
+        'children-small': "url('./assets/images/children-small.jpg')",
+        'children-large': "url('./assets/images/children-large.jpg')",
       },
       colors: {
         'primary': "#003CBF",

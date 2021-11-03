@@ -10,7 +10,7 @@ const WithLayout = (WrapperComponent: React.FC, LayoutComponent?: React.FC): Rea
       </Layout>
     );
   };
-  wrapper.displayName = `DefaultLayout`;
+  wrapper.displayName = `WithLayout`;
   return wrapper;
 };
 

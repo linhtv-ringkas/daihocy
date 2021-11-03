@@ -6,15 +6,16 @@ import Male from "features/male";
 import Female from "features/female";
 import Pregnant from 'features/pregnant';
 import Children from "features/children";
+import DetailLayout from "layout/detailLayout";
 
 const App: React.FC<{}>= ()=> {
   return (
     <Router>
       <Switch>
-        <Route path="/male" component={WithLayout(Male)} />
-        <Route path="/female" component={WithLayout(Female)} />
-        <Route path="/pregnant" component={WithLayout(Pregnant)} />
-        <Route path="/children" component={WithLayout(Children)} />
+        <Route path="/male" component={WithLayout(Male, DetailLayout)} />
+        <Route path="/female" component={WithLayout(Female, DetailLayout)} />
+        <Route path="/pregnant" component={WithLayout(Pregnant, DetailLayout)} />
+        <Route path="/children" component={WithLayout(Children, DetailLayout)} />
         {/*Home*/}
         <Route path="/" exact component={WithLayout(Home)} />
       </Switch>
