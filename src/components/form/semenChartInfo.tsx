@@ -30,17 +30,19 @@ const DAY_LIST = [
   {
     value: 0,
     label: 'Chọn ngày'
-  }, {
+  },
+  {
     value: 1,
     label: '< 2 ngày'
-  }, {
+  },
+  {
     value: 2,
     label: '2-7 ngày'
-  }, {
+  },
+  {
     value: 3,
     label: '> 7 ngày'
-  },
-]
+  },]
 const COUNT_LIST = [
   {
     value: 0,
@@ -86,80 +88,69 @@ const DIAGNOSE_LIST = [
   }, {
     value: 3,
     label: 'Sàng lọc trước sinh'
-  },{
+  }, {
     value: 4,
     label: 'Di truyền sinh sản'
-  },{
+  }, {
     value: 5,
     label: 'Khác'
   },
 ]
 
-const FormSemenChartInfo: React.FC<Props>= ({formControl,defaultValue})=> {
+const FormSemenChartInfo: React.FC<Props> = ({formControl, defaultValue}) => {
   const {
     control,
   } = formControl;
 
-  return (
-    <div className="mb-6">
-      <div className="font-bold text-2xl mb-6 uppercase">Xét nghiệm tinh dịch đồ</div>
-      <div className="grid grid-cols-1 sm:grid-cols-6 gap-4">
-        <Controller
-          name="nearestEjaculationType"
-          control={control}
-          defaultValue={get(defaultValue, "nearestEjaculationType", 0)}
-          render={({ field: { ref, ...others } }) => (
-            <Select
-              className="w-full mb-3 sm:col-span-6"
-              options={DAY_LIST}
-              inputProps={{ label: "Lần xuất tinh gần nhất cách mấy ngày" }}
-              {...others}
-            />
-          )}
-        />
-        <Controller
-          name="semenTestType"
-          control={control}
-          defaultValue={get(defaultValue, "semenTestType", 0)}
-          render={({ field: { ref, ...others } }) => (
-            <Select
-              className="w-full mb-3 sm:col-span-6"
-              options={COUNT_LIST}
-              inputProps={{ label: "Trước đây đã từng xét nghiệm tinh dịch đồ chưa?" }}
-              {...others}
-            />
-          )}
-        />
-        <Controller
-          name="resultSemenTestTye"
-          control={control}
-          defaultValue={get(defaultValue, "resultSemenTestTye", 0)}
-          render={({ field: { ref, ...others } }) => (
-            <Select
-              className="w-full mb-3 sm:col-span-6"
-              options={RESULT_LIST}
-              inputProps={{ label: "Kết quả xét nghiệm tinh dịch đồ của lần trước" }}
-              {...others}
-            />
-          )}
-        />
-        <Controller
-          name="mDiagnosticType"
-          control={control}
-          defaultValue={get(defaultValue, "mDiagnosticType", 0)}
-          render={({ field: { ref, ...others } }) => (
-            <Select
-              className="w-full mb-3 sm:col-span-6"
-              options={DIAGNOSE_LIST}
-              inputProps={{ label: "Chẩn đoán" }}
-              {...others}
-            />
-          )}
-        />
-
-      </div>
+  return (<div className="mb-6">
+    <div className="font-bold text-2xl mb-6 uppercase">Xét nghiệm tinh dịch đồ</div>
+    <div className="grid grid-cols-1 sm:grid-cols-6 gap-4">
+      <Controller
+        name="nearestEjaculationType"
+        control={control}
+        defaultValue={get(defaultValue, "nearestEjaculationType", 0)}
+        render={({field: {ref, ...others}}) => (<Select
+          className="w-full mb-3 sm:col-span-6"
+          options={DAY_LIST}
+          inputProps={{label: "Lần xuất tinh gần nhất cách mấy ngày"}}
+          {...others}
+        />)}
+      />
+      <Controller
+        name="semenTestType"
+        control={control}
+        defaultValue={get(defaultValue, "semenTestType", 0)}
+        render={({field: {ref, ...others}}) => (<Select
+          className="w-full mb-3 sm:col-span-6"
+          options={COUNT_LIST}
+          inputProps={{label: "Trước đây đã từng xét nghiệm tinh dịch đồ chưa?"}}
+          {...others}
+        />)}
+      />
+      <Controller
+        name="resultSemenTestTye"
+        control={control}
+        defaultValue={get(defaultValue, "resultSemenTestTye", 0)}
+        render={({field: {ref, ...others}}) => (<Select
+          className="w-full mb-3 sm:col-span-6"
+          options={RESULT_LIST}
+          inputProps={{label: "Kết quả xét nghiệm tinh dịch đồ của lần trước"}}
+          {...others}
+        />)}
+      />
+      <Controller
+        name="mDiagnosticType"
+        control={control}
+        defaultValue={get(defaultValue, "mDiagnosticType", 0)}
+        render={({field: {ref, ...others}}) => (<Select
+          className="w-full mb-3 sm:col-span-6"
+          options={DIAGNOSE_LIST}
+          inputProps={{label: "Chẩn đoán"}}
+          {...others}
+        />)}
+      />
     </div>
-  );
+  </div>);
 }
 
 export default FormSemenChartInfo;

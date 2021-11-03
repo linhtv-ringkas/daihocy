@@ -1,32 +1,24 @@
 import React from "react";
-import HeaderImage from 'assets/images/header-bg.jpeg';
-import Logo from 'assets/images/logo3.jpeg';
-import { makeStyles } from "@material-ui/core";
+import Logo from 'assets/images/logo3.jpg';
 import classNames from "classnames";
 import { Link } from "react-router-dom";
 
-const useStyles = makeStyles({
-  headerImage: {
-    background: `url(${HeaderImage}) right top no-repeat`,
-    backgroundSize: 'cover'
-  },
-});
-
 const DefaultLayout: React.FC = ({children}) => {
-  const classes = useStyles();
-  return (<>
-    <header className={classNames(classes.headerImage, "h-[122px]")}>
-      <Link to="/" className="">
-        <img className="w-[350px] h-[100px] ml-6 transform translate-y-6" src={Logo} alt="Logo"/>
-      </Link>
+  return (<div className={classNames("w-screen h-screen flex flex-col bg-home-small bg-no-repeat bg-contain md:bg-home-large md:bg-cover")}>
+    <header>
+      <div className="container mx-auto">
+        <Link to="/" className="w-auto h-100">
+          <img className="w-auto h-[60px] rounded-b-xl" src={Logo} alt="Logo"/>
+        </Link>
+      </div>
     </header>
-    <main className="container mx-auto">
+    <main className="container mx-auto flex-1">
       {children}
     </main>
     <footer>
 
     </footer>
-  </>);
+  </div>);
 };
 
 export default DefaultLayout;

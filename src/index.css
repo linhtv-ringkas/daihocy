@@ -1,3 +1,51 @@
 @tailwind base;
+@layer base {
+    @font-face {
+        font-family: "SFProDisplay";
+        font-weight: 100;
+        src: url("./assets/fonts/sf-pro-display-woff2/SFProDisplay-Thin.woff2");
+    }
+    @font-face {
+        font-family: "SFProDisplay";
+        font-weight: 200;
+        src: url("./assets/fonts/sf-pro-display-woff2/SFProDisplay-Ultralight.woff2");
+    }
+    @font-face {
+        font-family: "SFProDisplay";
+        font-weight: 300;
+        src: url("./assets/fonts/sf-pro-display-woff2/SFProDisplay-Light.woff2");
+    }
+    @font-face {
+        font-family: "SFProDisplay";
+        font-weight: 400;
+        src: url("./assets/fonts/sf-pro-display-woff2/SFProDisplay-Regular.woff2");
+    }
+    @font-face {
+        font-family: "SFProDisplay";
+        font-weight: 500;
+        src: url("./assets/fonts/sf-pro-display-woff2/SFProDisplay-Medium.woff2");
+    }
+    @font-face {
+        font-family: "SFProDisplay";
+        font-weight: 600;
+        src: url("./assets/fonts/sf-pro-display-woff2/SFProDisplay-Semibold.woff2");
+    }
+    @font-face {
+        font-family: "SFProDisplay";
+        font-weight: 700;
+        src: url("./assets/fonts/sf-pro-display-woff2/SFProDisplay-Bold.woff2");
+    }
+    @font-face {
+        font-family: "SFProDisplay";
+        font-weight: 800;
+        src: url("./assets/fonts/sf-pro-display-woff2/SFProDisplay-Heavy.woff2");
+    }
+    @font-face {
+        font-family: "SFProDisplay";
+        font-weight: 900;
+        src: url("./assets/fonts/sf-pro-display-woff2/SFProDisplay-Black.woff2");
+    }
+}
+
 @tailwind components;
 @tailwind utilities;

@@ -1,11 +1,12 @@
 import React from "react";
 import { Controller, UseFormReturn } from "react-hook-form";
 import { get } from "lodash";
-import Input from "../control/input";
+import Input from "components/control/input";
 import { Checkbox, FormControlLabel } from "@material-ui/core";
-import Select from "../control/select";
+import Select from "components/control/select";
+import { COUNT_LIST } from "utils/constant";
 
-export type FormClinicalInfoValues = {
+export type FormClinicalInfoFemaleValues = {
   medicalHistory: string;
   diseaseAcquired: boolean;
   diseaseAcquiredOther: string;
@@ -24,7 +25,7 @@ export type FormClinicalInfoValues = {
 };
 
 interface Props {
-  defaultValue?: FormClinicalInfoValues;
+  defaultValue?: FormClinicalInfoFemaleValues;
   formControl: UseFormReturn<any>
 }
 
@@ -47,7 +48,7 @@ const FAMILY_LIST = [
   },
 ]
 
-const FormClinicalInfo: React.FC<Props>= ({formControl,defaultValue})=> {
+const FormClinicalInfoFemale: React.FC<Props>= ({formControl,defaultValue})=> {
   const {
     control,
     formState: { errors },
@@ -141,6 +142,47 @@ const FormClinicalInfo: React.FC<Props>= ({formControl,defaultValue})=> {
               />
             )}
         />}
+        <Controller
+          name="fTimeOfPregnanciesType"
+          control={control}
+          defaultValue={get(defaultValue, "fTimeOfPregnanciesType", 0)}
+          render={({ field: { ref, ...others } }) => (
+            <Select
+              className="w-full mb-3 sm:col-span-2"
+              options={COUNT_LIST}
+              inputProps={{ label: "Số lần có thai" }}
+              {...others}
+            />
+          )}
+        />
+        <Controller
+          name="fNumberOfBirthType"
+          control={control}
+          defaultValue={get(defaultValue, "fNumberOfBirthType", 0)}
+          render={({ field: { ref, ...others } }) => (
+            <Select
+              className="w-full mb-3 sm:col-span-2"
+              options={COUNT_LIST}
+              inputProps={{ label: "Số lần đẻ" }}
+              {...others}
+            />
+          )}
+        />
+        <Controller
+          name="fAliveChild"
+          control={control}
+          defaultValue={get(defaultValue, "fAliveChild", 0)}
+          render={({ field: { ref, ...others } }) => (
+            <Select
+              className="w-full mb-3 sm:col-span-2"
+              options={COUNT_LIST}
+              inputProps={{ label: "Số con sống" }}
+              {...others}
+            />
+          )}
+        />
+
+
         <Controller
           name="toxicAgent"
           control={control}
@@ -291,4 +333,4 @@ const FormClinicalInfo: React.FC<Props>= ({formControl,defaultValue})=> {
   );
 }
 
-export default FormClinicalInfo;
+export default FormClinicalInfoFemale;
