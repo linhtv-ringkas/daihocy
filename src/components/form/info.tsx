@@ -224,7 +224,7 @@ const FormInfo: React.FC<Props>= ({formControl, defaultValue})=> {
               type="number"
               errorMsg={get(errors, "height.message", "")}
               inputRef={ref}
-              endAdornment={<span className="transform translate-y-[0.625rem] text-primary-4">cm</span>}
+              endAdornment={<span className="transform translate-y-[0.125rem] pl-2 text-primary-4">cm</span>}
               {...others}
             />
           )}
@@ -240,7 +240,7 @@ const FormInfo: React.FC<Props>= ({formControl, defaultValue})=> {
               type="number"
               errorMsg={get(errors, "weight.message", "")}
               inputRef={ref}
-              endAdornment={<span className="transform translate-y-[0.625rem] text-primary-4">kg</span>}
+              endAdornment={<span className="ransform translate-y-[0.125rem] pl-2 text-primary-4">kg</span>}
               {...others}
             />
           )}

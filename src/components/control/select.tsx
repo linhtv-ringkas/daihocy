@@ -60,6 +60,9 @@ const useSelectStype = makeStyles({
     "&:after": {
       display: "none",
     },
+    "& .MuiOutlinedInput-notchedOutline": {
+      border: 'none'
+    }
   },
   disabled: {
     opacity: "0.5",
