@@ -33,18 +33,15 @@ const Male: React.FC<{}>= ()=> {
   }
   return (
     <>
-      <h1 className="text-[2rem] md:text-[2.5rem] mt-32 md:mt-24 lg:mt-10 2xl:mt-28 3xl:mt-40 font-black text-white">Thông tin <br/> bệnh nhân nam</h1>
-      <div className="mt-6 bg-white h-full rounded-t-2xl px-6 pt-6 text-primary-5">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <FormInfo formControl={formControl}/>
-          <FormStimulant formControl={formControl} />
-          <FormClinicalInfo formControl={formControl} />
-          <FormSemenChartInfo formControl={formControl} />
-          <div className="flex flex-col items-center justify-center">
-            <MuiButton color={"primary"} type="submit"  className="w-12 bg-blue-800" variant="contained">Lưu</MuiButton>
-          </div>
-        </form>
-      </div>
+      <form onSubmit={handleSubmit(onSubmit)} className="text-primary-5">
+        <FormInfo formControl={formControl}/>
+        <FormStimulant formControl={formControl}/>
+        <FormClinicalInfo formControl={formControl}/>
+        <FormSemenChartInfo formControl={formControl}/>
+        <div className="flex flex-col items-center justify-center">
+          <MuiButton color={"primary"} type="submit" className="w-12 bg-blue-800" variant="contained">Lưu</MuiButton>
+        </div>
+      </form>
     </>
   );
 }

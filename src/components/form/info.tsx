@@ -3,8 +3,9 @@ import { Controller, UseFormReturn } from "react-hook-form";
 import Input from "components/control/input";
 import { get } from "lodash";
 import * as yup from "yup";
-import { Checkbox, FormControlLabel } from "@material-ui/core";
-import Select from "../control/select";
+import { FormControlLabel } from "@material-ui/core";
+import Select from "components/control/select";
+import Checkbox from "components/control/checkbox";
 
 export type FormInfoValues = {
   phone: string;
@@ -81,7 +82,7 @@ const FormInfo: React.FC<Props>= ({formControl, defaultValue})=> {
   const watchIsFamily = watch("isFamily", false);
   return (
     <div className="mb-6">
-      <div className="font-bold text-2xl mb-6 uppercase">THÔNG TIN CHUNG</div>
+      <div className="font-bold text-xl mb-6 uppercase">THÔNG TIN CHUNG</div>
       <div className="grid grid-cols-1 sm:grid-cols-6 gap-4">
         <Controller
           name="phone"
@@ -223,7 +224,7 @@ const FormInfo: React.FC<Props>= ({formControl, defaultValue})=> {
               type="number"
               errorMsg={get(errors, "height.message", "")}
               inputRef={ref}
-              endAdornment={<span>cm</span>}
+              endAdornment={<span className="transform translate-y-[0.625rem] text-primary-4">cm</span>}
               {...others}
             />
           )}
@@ -239,7 +240,7 @@ const FormInfo: React.FC<Props>= ({formControl, defaultValue})=> {
               type="number"
               errorMsg={get(errors, "weight.message", "")}
               inputRef={ref}
-              endAdornment={<span>kg</span>}
+              endAdornment={<span className="transform translate-y-[0.625rem] text-primary-4">kg</span>}
               {...others}
             />
           )}

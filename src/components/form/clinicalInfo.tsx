@@ -2,8 +2,9 @@ import React from "react";
 import { Controller, UseFormReturn } from "react-hook-form";
 import { get } from "lodash";
 import Input from "../control/input";
-import { Checkbox, FormControlLabel } from "@material-ui/core";
+import { FormControlLabel } from "@material-ui/core";
 import Select from "../control/select";
+import Checkbox from "../control/checkbox";
 
 export type FormClinicalInfoValues = {
   medicalHistory: string;

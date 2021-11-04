@@ -24,6 +24,7 @@ yarn-error.log*
 
 # webstorm ide
 .idea
+/.idea
 
 # enviroment
 .env

@@ -8,13 +8,15 @@ import COLORS from "utils/colors";
 
 const useInputStyles = makeStyles({
   input: {
-    color: COLORS.PRIMARY_6,
+    color: COLORS.coolGray['900'],
     background: COLORS.coolGray['50'],
-    borderRadius: "0.5rem",
     border: "1px solid transparent",
+    lineHeight: '1.5rem',
     fontSize: "1rem",
+    fontWeight: 500,
+    marginTop: '0.25rem',
     "& .MuiFilledInput-input": {
-      paddingLeft: 20,
+      padding: '0.25rem 0 0 0',
     },
     "& .MuiFilledInput-input:-webkit-autofill": {
       borderRadius: "0.75rem",
@@ -49,27 +51,30 @@ const useInputStyles = makeStyles({
     background: COLORS.coolGray['50'],
   },
   label: {
-    transform: "translate(20px, 10px) scale(0.75)",
     fontSize: "0.875rem",
+    lineHeight: '1.25rem',
     color: COLORS.PRIMARY_6,
     fontWeight: 500,
-    "&.Mui-focused": {
-      color: "#808080",
-      transform: "translate(20px, 10px) scale(0.75)",
-    },
-    "&.MuiInputLabel-filled.MuiInputLabel-shrink": {
-      transform: "translate(20px, 10px) scale(0.75)",
-    },
+    position: "relative",
+    transform: "unset !important",
+    scale: "unset !important",
     "&.Mui-error": {
       color: "#808080",
     },
   },
   control: {
     width: "100%",
+    padding: '0.75rem',
+    background: COLORS.coolGray['50'],
+    borderRadius: "0.5rem",
+    "& .MuiInputBase-input::-webkit-input-placeholder" : {
+      color: COLORS.NEUTRAL_3
+    },
     "& label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-webkit-input-placeholder" : {
       opacity: "0.42 !important",
       color: COLORS.NEUTRAL_3
     }
+
   },
   helperText: {
     position: "absolute",

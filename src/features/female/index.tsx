@@ -30,16 +30,13 @@ const Female: React.FC<{}>= ()=> {
     console.log("data", data)
   }
   return (
-    <div className="pt-8 mb-32">
-      <h2 className="text-center text-4xl font-bold pb-8">THÔNG TIN BỆNH NHÂN (NỮ)</h2>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <FormInfo formControl={formControl}/>
-        <FormClinicalInfoFemale formControl={formControl} />
-        <div className="flex flex-col items-center justify-center">
-          <MuiButton color={"primary"} type="submit"  className="w-12 bg-blue-800" variant="contained">Lưu</MuiButton>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <FormInfo formControl={formControl}/>
+      <FormClinicalInfoFemale formControl={formControl} />
+      <div className="flex flex-col items-center justify-center">
+        <MuiButton color={"primary"} type="submit"  className="w-12 bg-blue-800" variant="contained">Lưu</MuiButton>
+      </div>
+    </form>
   )
 }
 

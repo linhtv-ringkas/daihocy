@@ -1,9 +1,10 @@
 import React from "react";
 import { Controller, UseFormReturn } from "react-hook-form";
 import { get } from "lodash";
-import { Checkbox, FormControlLabel } from "@material-ui/core";
-import Select from "../control/select";
-import Input from "../control/input";
+import { FormControlLabel } from "@material-ui/core";
+import Select from "components/control/select";
+import Input from "components/control/input";
+import Checkbox from "components/control/checkbox";
 
 export type FormStimulantValues = {
   isCigarette: boolean;
