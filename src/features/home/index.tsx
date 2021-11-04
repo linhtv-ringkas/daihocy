@@ -51,7 +51,7 @@ const Home: React.FC<{}> = () => {
               <div className="flex flex-col">
                 <img className="h-auto w-full" src={i.image} alt={i.label}/>
                 <span className="text-sm md:text-base font-semibold my-2 whitespace-pre-line">{i.label}</span>
-                <span className="text-xs font-semibold text-primary">Chỉnh sửa <ArrowForwardIosIcon classes={{root: classes.iconSmall}} /></span>
+                <span className="text-xs font-semibold text-primary-5">Chỉnh sửa <ArrowForwardIosIcon classes={{root: classes.iconSmall}} /></span>
               </div>
             </Link>
           ))}

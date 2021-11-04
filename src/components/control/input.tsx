@@ -51,7 +51,7 @@ const useInputStyles = makeStyles({
   label: {
     transform: "translate(20px, 10px) scale(0.75)",
     fontSize: "0.875rem",
-    color: COLORS.PRIMARY,
+    color: COLORS.PRIMARY_6,
     "&.Mui-focused": {
       color: "#808080",
       transform: "translate(20px, 10px) scale(0.75)",

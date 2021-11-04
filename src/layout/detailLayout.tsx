@@ -36,7 +36,7 @@ const DetailLayout: React.FC = ({children}) => {
   }, [location])
 
   return (<div className={classNames(
-    "w-screen h-screen flex flex-col bg-no-repeat bg-contain",
+    "w-screen h-screen flex flex-col bg-no-repeat bg-contain overflow-hidden",
     imageClass.small, imageClass.large
     )}>
     <header>

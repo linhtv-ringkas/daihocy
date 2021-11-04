@@ -4,7 +4,7 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 
 const DefaultLayout: React.FC = ({children}) => {
-  return (<div className={classNames("w-screen h-screen flex flex-col bg-home-small bg-no-repeat bg-contain md:bg-home-large md:bg-cover")}>
+  return (<div className={classNames("w-screen h-screen overflow-hidden flex flex-col bg-home-small bg-no-repeat bg-contain md:bg-home-large md:bg-cover")}>
     <header>
       <div className="container mx-auto">
         <Link to="/" className="w-auto h-100">
