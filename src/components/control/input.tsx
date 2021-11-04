@@ -8,11 +8,11 @@ import COLORS from "utils/colors";
 
 const useInputStyles = makeStyles({
   input: {
-    color: "#4d4d4d",
-    background: "#f5f7fa",
-    borderRadius: "0.75rem",
+    color: COLORS.PRIMARY_6,
+    background: COLORS.coolGray['50'],
+    borderRadius: "0.5rem",
     border: "1px solid transparent",
-    fontSize: "0.875rem",
+    fontSize: "1rem",
     "& .MuiFilledInput-input": {
       paddingLeft: 20,
     },
@@ -20,22 +20,22 @@ const useInputStyles = makeStyles({
       borderRadius: "0.75rem",
     },
     "&:hover": {
-      background: "#f5f7fa",
+      background: COLORS.coolGray['50'],
     },
     "&:focus": {
-      background: "#f5f7fa",
+      background: COLORS.coolGray['50'],
     },
     "&:active": {
-      background: "#f5f7fa",
+      background: COLORS.coolGray['50'],
     },
     "&.Mui-focused": {
-      background: "#f5f7fa",
+      background: COLORS.coolGray['50'],
     },
     "&.Mui-error": {
       borderColor: "#f53126",
     },
     "&.Mui-disabled": {
-      background: "#f5f7fa",
+      background: COLORS.coolGray['50'],
     },
     "&:before": {
       display: "none",
@@ -46,12 +46,13 @@ const useInputStyles = makeStyles({
   },
   disabled: {
     opacity: "0.5",
-    background: "#f5f7fa",
+    background: COLORS.coolGray['50'],
   },
   label: {
     transform: "translate(20px, 10px) scale(0.75)",
     fontSize: "0.875rem",
     color: COLORS.PRIMARY_6,
+    fontWeight: 500,
     "&.Mui-focused": {
       color: "#808080",
       transform: "translate(20px, 10px) scale(0.75)",
@@ -66,7 +67,8 @@ const useInputStyles = makeStyles({
   control: {
     width: "100%",
     "& label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-webkit-input-placeholder" : {
-      opacity: "0.42 !important"
+      opacity: "0.42 !important",
+      color: COLORS.NEUTRAL_3
     }
   },
   helperText: {

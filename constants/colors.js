@@ -1,4 +1,7 @@
+const colors_tailwindcss = require('tailwindcss/colors')
+
 const colors = {
+    ...colors_tailwindcss,
     PRIMARY_1: "#7FF0F7",
     PRIMARY_2: "#00E1F0",
     PRIMARY_3: "#02CFE0",
