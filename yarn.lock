@@ -9610,6 +9610,11 @@ react-app-polyfill@^2.0.0:
     regenerator-runtime "^0.13.7"
     whatwg-fetch "^3.4.1"
 
+react-app-rewire-alias@^1.1.4:
+  version "1.1.4"
+  resolved "https://registry.yarnpkg.com/react-app-rewire-alias/-/react-app-rewire-alias-1.1.4.tgz#2e9a90765659eadbdfd75514739e3c7bc628adbc"
+  integrity sha512-gFKSTEjcuNit1VDFlfbRGFtxJrmtixRFknfWtyh6cAA0IjwBoldl2fCEkFXQknMUgAv6LHeaQovd/ax8n3l+rA==
+
 react-dev-utils@^11.0.3:
   version "11.0.4"
   resolved "https://registry.npmjs.org/react-dev-utils/-/react-dev-utils-11.0.4.tgz"

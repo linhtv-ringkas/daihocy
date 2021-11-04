@@ -1,3 +1,4 @@
+const COLORS = require("./constants/colors")
 module.exports = {
   mode: "jit",
   purge: [
@@ -41,7 +42,7 @@ module.exports = {
         'children-large': "url('./assets/images/children-large.jpg')",
       },
       colors: {
-        'primary': "#003CBF",
+        'primary': COLORS.PRIMARY,
       }
     },
   },

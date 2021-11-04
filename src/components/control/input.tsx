@@ -4,6 +4,7 @@ import MuiFilledInput, { FilledInputProps as MuiFilledInputProps, } from "@mater
 import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import { makeStyles } from "@material-ui/core/styles";
+import COLORS from "utils/colors";
 
 const useInputStyles = makeStyles({
   input: {
@@ -48,9 +49,9 @@ const useInputStyles = makeStyles({
     background: "#f5f7fa",
   },
   label: {
-    transform: "translate(20px, 20px)",
+    transform: "translate(20px, 10px) scale(0.75)",
     fontSize: "0.875rem",
-    color: "#808080",
+    color: COLORS.PRIMARY,
     "&.Mui-focused": {
       color: "#808080",
       transform: "translate(20px, 10px) scale(0.75)",
@@ -64,6 +65,9 @@ const useInputStyles = makeStyles({
   },
   control: {
     width: "100%",
+    "& label[data-shrink=false] + .MuiInputBase-formControl .MuiInputBase-input::-webkit-input-placeholder" : {
+      opacity: "0.42 !important"
+    }
   },
   helperText: {
     position: "absolute",
@@ -124,6 +128,7 @@ const Input: React.FC<Props> = ({
           value={value}
           onChange={(e) => setValue(e.target.value)}
           fullWidth={true}
+          placeholder={otherProps.placeholder ?? label}
           classes={{
             root: classes.input,
             disabled: classes.disabled,

@@ -2,7 +2,7 @@
   "name": "kbyt_web",
   "version": "1.0.0",
   "private": true,
-  "engines" : {
+  "engines": {
     "node": ">=10.0.0",
     "npm": ">=6.0.0"
   },
@@ -64,6 +64,7 @@
     "autoprefixer": "^9.8.8",
     "chokidar-cli": "^3.0.0",
     "postcss": "^7.0.39",
+    "react-app-rewire-alias": "^1.1.4",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }
