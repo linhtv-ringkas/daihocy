@@ -49,7 +49,7 @@ const DetailLayout: React.FC = ({children}) => {
       </div>
     </header>
     <main className="container mx-auto flex-1 mb-36">
-      <h1 className="whitespace-pre-line text-[2rem] md:text-[2.5rem] mt-32 leading-9  md:mt-24 lg:mt-10 2xl:mt-28 3xl:mt-40 font-black text-white">{imageClass.title}</h1>
+      <h1 className="whitespace-pre-line text-[2rem] md:text-[2.5rem] mt-32 leading-9 md:leading-10 md:mt-24 lg:mt-10 2xl:mt-28 3xl:mt-60 font-black text-white">{imageClass.title}</h1>
       <div className="mt-6 bg-white h-full rounded-t-2xl px-6 pt-6">
         {children}
       </div>
