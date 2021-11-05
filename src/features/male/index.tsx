@@ -8,10 +8,18 @@ import MuiButton from '@material-ui/core/Button';
 import FormStimulant, { FormStimulantValues } from "components/form/stimulant";
 import FormClinicalInfo, { FormClinicalInfoValues } from "components/form/clinicalInfo";
 import FormSemenChartInfo, { FormSemenChartInfoValues } from "components/form/semenChartInfo";
+import { useGetInfoMaleMutation } from "features/male/api";
 
 type FormValues = FormInfoValues & FormStimulantValues & FormClinicalInfoValues & FormSemenChartInfoValues;
 
 const Male: React.FC<{}>= ()=> {
+  const [getInfoMale, state] = useGetInfoMaleMutation();
+  useEffect(()=> {
+    console.log("state", state);
+  } , [state])
+  useEffect(()=> {
+    getInfoMale("0387233858")
+  },[])
   const location = useLocation();
   const FormSchema = yup.object().shape({
     ...FormInfoSchema

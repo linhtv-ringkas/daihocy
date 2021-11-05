@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import { getData } from "./api";
+import React from "react";
 import { Link } from "react-router-dom";
 import male from 'assets/images/male.png';
 import female from 'assets/images/female.png';
@@ -36,11 +35,6 @@ const listFn = [
 
 const Home: React.FC<{}> = () => {
   const classes = useStyles();
-  useEffect(() => {
-    getData().then(res => {
-      console.log("data nè: ", res);
-    });
-  }, [])
   return (
     <>
       <h1 className="text-[2rem] md:text-[2.5rem] mt-32 md:mt-28 lg:mt-36x font-black text-white">Thông tin <br/> bệnh nhân</h1>
