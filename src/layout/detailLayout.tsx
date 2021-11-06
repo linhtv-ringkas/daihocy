@@ -39,18 +39,18 @@ const DetailLayout: React.FC = ({children}) => {
     }
   }, [location])
 
-  return (<div className={classNames("flex flex-col  overflow-x-hidden relative")}>
+  return (<div className={classNames("flex flex-col  overflow-x-hidden relative bg-gray-100 ")}>
     <header >
-      <div className={classNames("w-screen h-screen absolute top-0 left-0  bg-no-repeat bg-contain", imageClass.small, imageClass.large)} style={{zIndex: -1}}/>
+      <div className={classNames("w-screen h-screen absolute top-0 left-0  bg-no-repeat bg-contain", imageClass.small, imageClass.large)} style={{zIndex: 1}}/>
       <div className="container mx-auto z-10 relative">
         <Link to="/" className="w-auto h-100">
           <img className="w-auto h-[60px] rounded-b-xl" src={Logo} alt="Logo"/>
         </Link>
       </div>
     </header>
-    <main className="container mx-auto flex-1 mb-36">
+    <main className="container mx-auto flex-1 mb-36  relative" style={{zIndex: 2}}>
       <h1 className="whitespace-pre-line text-[2rem] md:text-[2.5rem] mt-32 leading-9 md:leading-10 md:mt-24 lg:mt-10 2xl:mt-28 3xl:mt-60 font-black text-white">{imageClass.title}</h1>
-      <div className="mt-6 bg-white h-full rounded-t-2xl px-6 pt-6">
+      <div className="mt-6 h-full">
         {children}
       </div>
     </main>

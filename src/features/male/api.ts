@@ -1,5 +1,5 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
-import apiBaseQuery from "services/apiServices";
+import apiBaseQuery from "services/apiBaseQuery";
 
 const PATH = "API_MALE"
 export const apiMale = createApi({
@@ -8,9 +8,9 @@ export const apiMale = createApi({
   endpoints: (builder) => ({
     getInfoMale: builder.mutation({
       query: (phone:string) => ({
-        url: `checkPhoneMale`,
+        url: `/checkPhoneMale`,
         method: 'POST',
-        body: {phone},
+        data: {phone},
         headers: {
           "Content-Type": "application/x-www-form-urlencoded"
         }
