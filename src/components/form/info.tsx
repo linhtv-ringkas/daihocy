@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Controller, UseFormReturn } from "react-hook-form";
 import Input from "components/control/input";
 import { get } from "lodash";
@@ -77,9 +77,22 @@ const FormInfo: React.FC<Props>= ({formControl, defaultValue})=> {
   const {
     control,
     formState: { errors },
-    watch
+    watch,
+    setValue
   } = formControl;
   const watchIsFamily = watch("isFamily", false);
+  const watchHeight = watch("height", 0);
+  const watchWeight = watch("weight", 0);
+  useEffect(()=> {
+      if(watchHeight> 0 && watchWeight > 0) {
+        const height = watchHeight/100
+        const bmi = watchWeight/(height*height)
+        setValue('BMI', Math.round(bmi*100)/100);
+      } else {
+        setValue('BMI', 0);
+      }
+  }, [watchHeight, watchWeight])
+
   return (
     <div className="my-6 p-6 bg-white rounded-2xl">
       <div className="font-bold text-xl mb-6 uppercase">THÔNG TIN CHUNG</div>
@@ -216,7 +229,7 @@ const FormInfo: React.FC<Props>= ({formControl, defaultValue})=> {
         <Controller
           name="height"
           control={control}
-          defaultValue={get(defaultValue, "height")}
+          defaultValue={get(defaultValue, "height", 0)}
           render={({ field: { ref, ...others } }) => (
             <Input
               label="Chiều cao"
@@ -232,7 +245,7 @@ const FormInfo: React.FC<Props>= ({formControl, defaultValue})=> {
         <Controller
           name="weight"
           control={control}
-          defaultValue={get(defaultValue, "weight")}
+          defaultValue={get(defaultValue, "weight", 0)}
           render={({ field: { ref, ...others } }) => (
             <Input
               label="Cân nặng"
@@ -248,7 +261,7 @@ const FormInfo: React.FC<Props>= ({formControl, defaultValue})=> {
         <Controller
           name="BMI"
           control={control}
-          defaultValue={get(defaultValue, "BMI")}
+          defaultValue={get(defaultValue, "BMI", 0)}
           render={({ field: { ref, ...others } }) => (
             <Input
               label="BMI"
