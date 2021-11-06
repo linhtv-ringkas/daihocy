@@ -45,6 +45,10 @@ const useInputStyles = makeStyles({
     "&:after": {
       display: "none",
     },
+    "& .MuiSelect-nativeInput[value='']": {
+      background: COLORS.coolGray['50'],
+      opacity: 1
+    }
   },
   disabled: {
     opacity: "0.5",

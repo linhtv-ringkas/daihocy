@@ -62,6 +62,10 @@ const useSelectStype = makeStyles({
     },
     "& .MuiOutlinedInput-notchedOutline": {
       border: 'none'
+    },
+    "& .MuiSelect-nativeInput[value='']": {
+      background: COLORS.coolGray['50'],
+      opacity: 1
     }
   },
   disabled: {
