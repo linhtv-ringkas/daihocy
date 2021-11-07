@@ -19,6 +19,6 @@ export const COUNT_LIST = [
   },
   {
     value: 4,
-    label: '4'
+    label: '>3'
   },
 ]

@@ -1,21 +1,21 @@
 import React, { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormInfo, { FormInfoSchema, FormInfoValues } from "components/form/info";
-import MuiButton from '@material-ui/core/Button';
 import FormStimulant, { FormStimulantValues } from "components/form/stimulant";
 import FormClinicalInfo, { FormClinicalInfoValues } from "components/form/clinicalInfo";
 import FormSemenChartInfo, { FormSemenChartInfoValues } from "components/form/semenChartInfo";
 import { useGetInfoMaleQuery, useUpdateInfoMutation } from "features/male/api";
 import { PHONE_REGEX } from "../../utils/constant";
 import AlertModal from "../../components/modals/AlertModal";
+import Button from "../../components/control/button";
 
 type FormValues = FormInfoValues & FormStimulantValues & FormClinicalInfoValues & FormSemenChartInfoValues;
 
 const Male: React.FC<{}>= ()=> {
-  const location = useLocation();
+  const history = useHistory();
   const FormSchema = yup.object().shape({
     ...FormInfoSchema
   });
@@ -31,6 +31,7 @@ const Male: React.FC<{}>= ()=> {
   useEffect(()=> {
     console.log("updateInfoState", updateInfoState)
     if(updateInfoState.isSuccess && !updateInfoState.isLoading){
+      history.goBack();
       const { close } = AlertModal({
         title: "Thông báo",
         description: "Cập nhật thành công",
@@ -63,8 +64,8 @@ const Male: React.FC<{}>= ()=> {
         <FormStimulant formControl={formControl}/>
         <FormClinicalInfo formControl={formControl}/>
         <FormSemenChartInfo formControl={formControl}/>
-        <div className="flex flex-col items-center justify-center">
-          <MuiButton color={"primary"} type="submit" className="w-12 bg-blue-800" variant="contained">Lưu</MuiButton>
+        <div className="flex flex-col items-center justify-center max-w-xs mx-auto">
+          <Button color={"primary"} type="submit" className="w-12 bg-blue-800" variant="contained">Lưu</Button>
         </div>
       </form>
     </>
