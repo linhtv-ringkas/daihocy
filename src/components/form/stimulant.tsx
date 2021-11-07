@@ -67,7 +67,7 @@ const FormStimulant: React.FC<Props> = ({formControl, defaultValue}) => {
           {...others}
         />)}
       />
-      {watchIsCigarette && (<>
+      {+watchIsCigarette > 0 && (<>
         <Controller
           name="numberOfCigaretteType"
           control={control}
@@ -103,7 +103,7 @@ const FormStimulant: React.FC<Props> = ({formControl, defaultValue}) => {
           {...others}
         />)}
       />
-      {watchIsPipeTobacco && (<>
+      {+watchIsPipeTobacco > 0 && (<>
         <Controller
           name="numberOfPipeTobaccoType"
           control={control}
@@ -139,7 +139,7 @@ const FormStimulant: React.FC<Props> = ({formControl, defaultValue}) => {
           {...others}
         />)}
       />
-      {watchIsBeer && (<>
+      {+watchIsBeer > 0 && (<>
         <Controller
           name="numberOfBeerType"
           control={control}
@@ -175,7 +175,7 @@ const FormStimulant: React.FC<Props> = ({formControl, defaultValue}) => {
           {...others}
         />)}
       />
-      {watchIsAlcohol && (<>
+      {+watchIsAlcohol>0 && (<>
         <Controller
           name="numberOfAlcoholType"
           control={control}
@@ -211,7 +211,7 @@ const FormStimulant: React.FC<Props> = ({formControl, defaultValue}) => {
           {...others}
         />)}
       />
-      {watchStimulantType && (<>
+      {+watchStimulantType > 0 && (<>
         <Controller
           name="stimulant"
           control={control}

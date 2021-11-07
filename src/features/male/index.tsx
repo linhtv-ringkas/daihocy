@@ -8,37 +8,54 @@ import MuiButton from '@material-ui/core/Button';
 import FormStimulant, { FormStimulantValues } from "components/form/stimulant";
 import FormClinicalInfo, { FormClinicalInfoValues } from "components/form/clinicalInfo";
 import FormSemenChartInfo, { FormSemenChartInfoValues } from "components/form/semenChartInfo";
-import { useGetInfoMaleMutation } from "features/male/api";
+import { useGetInfoMaleQuery, useUpdateInfoMutation } from "features/male/api";
+import { PHONE_REGEX } from "../../utils/constant";
+import AlertModal from "../../components/modals/AlertModal";
 
 type FormValues = FormInfoValues & FormStimulantValues & FormClinicalInfoValues & FormSemenChartInfoValues;
 
 const Male: React.FC<{}>= ()=> {
-  const [getInfoMale, state] = useGetInfoMaleMutation();
-  useEffect(()=> {
-    console.log("state", state);
-  } , [state])
-  useEffect(()=> {
-    getInfoMale("0387233858")
-  },[])
   const location = useLocation();
   const FormSchema = yup.object().shape({
     ...FormInfoSchema
   });
+  const [sendInfo, updateInfoState ] = useUpdateInfoMutation();
   //form
   const formControl = useForm<FormValues>({
     mode: "onSubmit",
     resolver: yupResolver(FormSchema),
   });
-  const { handleSubmit } = formControl;
+  const { handleSubmit, watch, setValue } = formControl;
+  const watchPhone = watch("phone", "");
 
   useEffect(()=> {
-    console.log("location", location)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  },[])
-
+    console.log("updateInfoState", updateInfoState)
+    if(updateInfoState.isSuccess && !updateInfoState.isLoading){
+      const { close } = AlertModal({
+        title: "Thông báo",
+        description: "Cập nhật thành công",
+        type: "success",
+        bottomText: "Đồng ý",
+        onBottomClick: () => {
+          close();
+        },
+      });
+    }
+  },[updateInfoState])
+  const state = useGetInfoMaleQuery(watchPhone, {skip: !PHONE_REGEX.test(watchPhone)});
+  useEffect(()=> {
+    const {isSuccess, data} = state;
+    if(isSuccess && Object.keys(data).length) {
+      for (const [key, value] of Object.entries(data)) {
+        setValue(key as any, value);
+      }
+    }
+  }, [setValue, state])
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log("data", data)
+    sendInfo(data)
   }
+
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="text-primary-5">

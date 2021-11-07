@@ -91,7 +91,7 @@ const FormInfo: React.FC<Props>= ({formControl, defaultValue})=> {
       } else {
         setValue('BMI', 0);
       }
-  }, [watchHeight, watchWeight])
+  }, [setValue, watchHeight, watchWeight])
 
   return (
     <div className="my-6 p-6 bg-white rounded-2xl">

@@ -5,6 +5,7 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import { makeStyles } from "@material-ui/core/styles";
 import COLORS from "utils/colors";
+import classNames from "classnames";
 
 const useInputStyles = makeStyles({
   input: {
@@ -15,11 +16,14 @@ const useInputStyles = makeStyles({
     fontSize: "1rem",
     fontWeight: 500,
     marginTop: '0.25rem',
+    borderRadius: '0.3rem',
+    padding: '5px',
     "& .MuiFilledInput-input": {
       padding: '0.25rem 0 0 0',
     },
     "& .MuiFilledInput-input:-webkit-autofill": {
-      borderRadius: "0.75rem",
+      borderRadius: "0.3rem",
+      "-webkit-box-shadow": `0 0 0 30px ${COLORS.coolGray['50']} inset !important`
     },
     "&:hover": {
       background: COLORS.coolGray['50'],
@@ -63,7 +67,7 @@ const useInputStyles = makeStyles({
     transform: "unset !important",
     scale: "unset !important",
     "&.Mui-error": {
-      color: "#808080",
+      color: "#f53126",
     },
   },
   control: {
@@ -117,7 +121,7 @@ const Input: React.FC<Props> = ({
   const [inputId] = useState(() => `${Math.floor(Math.random() * 10000) + 1}`);
 
   return (
-    <div className={className}>
+    <div className={classNames(className)}>
       <FormControl
         variant="filled"
         className={classes.control}

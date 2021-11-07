@@ -6,7 +6,7 @@ export const apiMale = createApi({
   reducerPath: PATH,
   baseQuery: apiBaseQuery,
   endpoints: (builder) => ({
-    getInfoMale: builder.mutation({
+    getInfoMale: builder.query({
       query: (phone:string) => ({
         url: `/checkPhoneMale`,
         method: 'POST',
@@ -16,7 +16,18 @@ export const apiMale = createApi({
         }
       }),
     }),
+    updateInfo: builder.mutation({
+      query: (data) => ({
+        url: `/submitMale`,
+        method: 'POST',
+        data,
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        }
+      }),
+    }),
   }),
 });
 
-export const { useGetInfoMaleMutation } = apiMale;
+export const { useGetInfoMaleQuery, useUpdateInfoMutation } = apiMale;
+export default apiMale;
