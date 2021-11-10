@@ -29,7 +29,7 @@ const useSelectStype = makeStyles({
     lineHeight: '1.5rem',
     fontSize: "1rem",
     fontWeight: 500,
-    marginTop: '0.25rem',
+    marginTop: 0,
     "& .MuiFilledInput-input": {
       padding: '1.25rem 0 0 0',
     },

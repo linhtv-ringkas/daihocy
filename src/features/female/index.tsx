@@ -7,10 +7,11 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import FormClinicalInfoFemale, { FormClinicalInfoFemaleValues } from "components/form/clinicalInfoFemale";
 import Button from "components/control/button";
 import { useGetInfoFemaleQuery, useUpdateInfoMutation } from "features/female/api";
-import AlertModal from "../../components/modals/AlertModal";
-import { PHONE_REGEX } from "../../utils/constant";
+import AlertModal from "components/modals/AlertModal";
+import { PHONE_REGEX } from "utils/constant";
+import FormStimulant, { FormStimulantValues } from "components/form/stimulant";
 
-type FormValues = FormInfoValues & FormClinicalInfoFemaleValues;
+type FormValues = FormInfoValues & FormClinicalInfoFemaleValues & FormStimulantValues;
 
 const Female: React.FC<{}> = () => {
   const history = useHistory();
@@ -57,6 +58,7 @@ const Female: React.FC<{}> = () => {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <FormInfo formControl={formControl}/>
+      <FormStimulant formControl={formControl}/>
       <FormClinicalInfoFemale formControl={formControl}/>
       <div className="flex flex-col items-center justify-center">
         <Button color={"primary"} type="submit" className="w-12 bg-blue-800" variant="contained">Lưu</Button>
