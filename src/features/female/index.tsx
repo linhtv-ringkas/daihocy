@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import FormInfo, { FormInfoSchema, FormInfoValues } from "components/form/info";
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -14,7 +14,7 @@ import FormStimulant, { FormStimulantValues } from "components/form/stimulant";
 type FormValues = FormInfoValues & FormClinicalInfoFemaleValues & FormStimulantValues;
 
 const Female: React.FC<{}> = () => {
-  const history = useHistory();
+  const navigate = useNavigate();
   const [sendInfo, updateInfoState] = useUpdateInfoMutation();
   const FormSchema = yup.object().shape({
     ...FormInfoSchema
@@ -30,7 +30,7 @@ const Female: React.FC<{}> = () => {
   useEffect(() => {
     console.log("updateInfoState", updateInfoState)
     if (updateInfoState.isSuccess && !updateInfoState.isLoading) {
-      history.goBack();
+      navigate(-1);
       const {close} = AlertModal({
         title: "Thông báo",
         description: "Cập nhật thành công",

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import FormInfo, { FormInfoSchema, FormInfoValues } from "components/form/info";
@@ -15,7 +15,7 @@ import Button from "../../components/control/button";
 type FormValues = FormInfoValues & FormStimulantValues & FormClinicalInfoValues & FormSemenChartInfoValues;
 
 const Male: React.FC<{}>= ()=> {
-  const history = useHistory();
+  const navigate = useNavigate();
   const FormSchema = yup.object().shape({
     ...FormInfoSchema
   });
@@ -31,7 +31,7 @@ const Male: React.FC<{}>= ()=> {
   useEffect(()=> {
     console.log("updateInfoState", updateInfoState)
     if(updateInfoState.isSuccess && !updateInfoState.isLoading){
-      history.goBack();
+      navigate(-1);
       const { close } = AlertModal({
         title: "Thông báo",
         description: "Cập nhật thành công",
