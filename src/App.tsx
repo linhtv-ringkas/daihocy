@@ -1,29 +1,27 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
-import Home from 'features/home';
 import WithLayout from "./layout/withLayout";
-import Male from "./features/male";
-import Female from "./features/female";
-import Pregnant from "./features/pregnant";
-import Children from "./features/children";
 import DetailLayout from "./layout/detailLayout";
+import LoadingComponent from "./layout/loading";
 
-const HomePage = (WithLayout(Home));
-const MalePage = (WithLayout(Male, DetailLayout));
-const FemalePage = (WithLayout(Female, DetailLayout));
-const PregnantPage = (WithLayout(Pregnant, DetailLayout));
-const ChildrenPage = (WithLayout(Children, DetailLayout));
+const HomePage = (WithLayout(React.lazy(() => import('features/home'))));
+const MalePage = (WithLayout(React.lazy(() => import('features/male')), DetailLayout));
+const FemalePage = (WithLayout(React.lazy(() => import('features/female')), DetailLayout));
+const PregnantPage = (WithLayout(React.lazy(() => import('features/pregnant')), DetailLayout));
+const ChildrenPage = (WithLayout(React.lazy(() => import('features/children')), DetailLayout));
 
-const App: React.FC<{}>= ()=> {
+const App: React.FC<{}> = () => {
   return (
-    <Routes>
-      <Route path="/male" element={<MalePage />} />
-      <Route path="/female" element={<FemalePage />} />
-      <Route path="/pregnant" element={<PregnantPage />} />
-      <Route path="/children" element={<ChildrenPage />} />
-      {/*Home*/}
-      <Route path="/" element={<HomePage />} />
-    </Routes>
+    <React.Suspense fallback={<LoadingComponent/>}>
+      <Routes>
+        <Route path="/male" element={<MalePage/>}/>
+        <Route path="/female" element={<FemalePage/>}/>
+        <Route path="/pregnant" element={<PregnantPage/>}/>
+        <Route path="/children" element={<ChildrenPage/>}/>
+        {/*Home*/}
+        <Route path="/" element={<HomePage/>}/>
+      </Routes>
+    </React.Suspense>
   );
 }
 
