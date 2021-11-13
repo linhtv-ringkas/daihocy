@@ -61,21 +61,7 @@ const FormHusbandInfo: React.FC<Props>= ({formControl, defaultValue})=> {
   const {
     control,
     formState: { errors },
-    watch,
-    setValue
   } = formControl;
-  const watchIsFamily = watch("isFamily", false);
-  const watchHeight = watch("height", 0);
-  const watchWeight = watch("weight", 0);
-  useEffect(()=> {
-      if(watchHeight> 0 && watchWeight > 0) {
-        const height = watchHeight/100
-        const bmi = watchWeight/(height*height)
-        setValue('BMI', Math.round(bmi*100)/100);
-      } else {
-        setValue('BMI', 0);
-      }
-  }, [setValue, watchHeight, watchWeight])
 
   return (
     <div className="my-6 p-6 bg-white rounded-2xl">
