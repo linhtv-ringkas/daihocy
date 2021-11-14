@@ -1,6 +1,7 @@
-import { Checkbox, FormControlLabel } from "@material-ui/core";
+import {FormControlLabel } from "@material-ui/core";
 import Input from "components/control/input";
 import Select from "components/control/select";
+import Checkbox from "components/control/checkbox";
 import useWatchFormData from "hooks/useWatchFormData";
 import { get, transform } from "lodash";
 import React, { useEffect } from "react";
