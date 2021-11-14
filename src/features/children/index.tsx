@@ -5,6 +5,7 @@ import { FormChildrenClinicalInfoValues } from "components/form/children/childCl
 import FormChildrenClinicalExamination, { FormChildrenClinicalExaminationValues } from "components/form/children/childrenClinicalExamination";
 import FormChildrenDeformity, { FormChildrenDeformityValues } from "components/form/children/childrendDeformity";
 import FormChildrenInfo, { FormChildrenInfoValues } from "components/form/children/childrendInfo";
+import FormParentInfo from "components/form/children/parentInfo";
 import { FormInfoSchema } from "components/form/info";
 import AlertModal from "components/modals/AlertModal";
 import { useGetInfoMaleQuery, useUpdateInfoMutation } from "features/male/api";
@@ -66,6 +67,8 @@ const Male: React.FC<{}>= ()=> {
         <FormChildrenClinicalInfo formControl={formControl}/>
         <FormChildrenClinicalExamination formControl={formControl}/>
         <FormChildrenDeformity formControl={formControl}/>
+        <FormParentInfo formControl={formControl} formType="father"/>
+        <FormParentInfo formControl={formControl} formType="mother"/>
         <div className="flex flex-col items-center justify-center max-w-xs mx-auto">
           <Button color={"primary"} type="submit" className="w-12 bg-blue-800" variant="contained">Lưu</Button>
         </div>

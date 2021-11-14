@@ -2,7 +2,7 @@ import Input from "components/control/input";
 import Select from "components/control/select";
 import useWatchFormData from "hooks/useWatchFormData";
 import { chain, get } from "lodash";
-import React, { useCallback, useEffect, useMemo } from "react";
+import React, { useEffect } from "react";
 import { Controller, UseFormReturn } from "react-hook-form";
 import * as yup from "yup";
 
@@ -63,13 +63,10 @@ const FormChildrenDeformity: React.FC<Props> = ({ formControl, defaultValue }) =
   ]
   const watchFieldArr = chain(fields).keyBy('key1').mapValues('defaultValue').value();
   const watchData = useWatchFormData(watchFieldArr, watch)
-  useEffect(() => {
-    console.log("watchField", watchData);
-  }, [watchData])
 
   return (
     <div className="my-6 p-6 bg-white rounded-2xl">
-      <div className="font-bold text-xl mb-6 uppercase">Các dị tật quan sát được</div>
+      <div className="font-bold text-md mb-6 uppercase">Các dị tật quan sát được</div>
       <div className="grid grid-cols-1 sm:grid-cols-6 gap-4">
         {fields.map(field => (<React.Fragment key={field.key1}>
           <Controller

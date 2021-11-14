@@ -36,7 +36,7 @@ const FormChildrenClinicalExamination: React.FC<Props>= ({formControl,defaultVal
   // const watchGeneticPathologyType3 = watch("geneticPathologyType3", 0);
   return (
     <div className="my-6 p-6 bg-white rounded-2xl">
-      <div className="font-bold text-2xl mb-6 uppercase">Thăm khám lâm sàng</div>
+      <div className="font-bold text-md mb-6 uppercase">Thăm khám lâm sàng</div>
       <div className="grid grid-cols-1 sm:grid-cols-6 gap-4">
       <Controller
           name="currentHeight"

@@ -103,7 +103,7 @@ const FormSemenChartInfo: React.FC<Props> = ({formControl, defaultValue}) => {
   } = formControl;
 
   return (<div className="my-6 p-6 bg-white rounded-2xl">
-    <div className="font-bold text-2xl mb-6 uppercase">Xét nghiệm tinh dịch đồ</div>
+    <div className="font-bold text-md mb-6 uppercase">Xét nghiệm tinh dịch đồ</div>
     <div className="grid grid-cols-1 sm:grid-cols-6 gap-4">
       <Controller
         name="nearestEjaculationType"

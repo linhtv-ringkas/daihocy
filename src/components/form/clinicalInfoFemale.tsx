@@ -85,7 +85,7 @@ const FormClinicalInfoFemale: React.FC<Props> = ({formControl, defaultValue}) =>
 
   return (
     <div className="my-6 p-6 bg-white rounded-2xl">
-      <div className="font-bold text-2xl mb-6 uppercase">THÔNG TIN LÂM SÀNG</div>
+      <div className="font-bold text-md mb-6 uppercase">THÔNG TIN LÂM SÀNG</div>
       <div className="grid grid-cols-1 sm:grid-cols-6 gap-4">
         <Controller
           name="medicalHistory"
