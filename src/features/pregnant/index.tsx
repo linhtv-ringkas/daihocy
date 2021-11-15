@@ -48,12 +48,14 @@ const Pregnant: React.FC<{}> = () => {
   }, [updateInfoState])
   const state = useGetInfoPregnantQuery(watchPhone, {skip: !PHONE_REGEX.test(watchPhone)});
   useEffect(() => {
-    const {isSuccess, data} = state;
-    if (isSuccess && Object.keys(data).length) {
-      for (const [key, value] of Object.entries(data)) {
-        setValue(key as any, value);
-      }
-    }
+    console.log("state", state);
+    
+    // const {isSuccess, data = {}} = state;
+    // if (isSuccess && Object.keys(data).length) {
+    //   for (const [key, value] of Object.entries(data)) {
+    //     setValue(key as any, value);
+    //   }
+    // }
   }, [setValue, state])
   const onSubmit: SubmitHandler<FormValues> = (data) => {
     console.log("data", data)

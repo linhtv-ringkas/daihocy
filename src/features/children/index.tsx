@@ -8,7 +8,7 @@ import FormChildrenInfo, { FormChildrenInfoValues } from "components/form/childr
 import FormParentInfo from "components/form/children/parentInfo";
 import { FormInfoSchema } from "components/form/info";
 import AlertModal from "components/modals/AlertModal";
-import { useGetInfoMaleQuery, useUpdateInfoMutation } from "features/male/api";
+import { useGetInfoQuery, useUpdateInfoMutation } from "features/children/api";
 import React, { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
@@ -46,7 +46,7 @@ const Male: React.FC<{}>= ()=> {
       });
     }
   },[updateInfoState, navigate])
-  const state = useGetInfoMaleQuery(watchPhone, {skip: !PHONE_REGEX.test(watchPhone)});
+  const state = useGetInfoQuery(watchPhone, {skip: !PHONE_REGEX.test(watchPhone)});
   useEffect(()=> {
     const {isSuccess, data} = state;
     if(isSuccess && Object.keys(data).length) {

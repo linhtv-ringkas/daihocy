@@ -1,14 +1,14 @@
 import { createApi } from '@reduxjs/toolkit/query/react';
 import apiBaseQuery from "services/apiBaseQuery";
 
-const PATH = "API_PREGNANT"
+const PATH = "API_CHILD"
 export const apiPregnant= createApi({
   reducerPath: PATH,
   baseQuery: apiBaseQuery,
   endpoints: (builder) => ({
-    getInfoPregnant: builder.query({
+    getInfo: builder.query({
       query: (phone:string) => ({
-        url: `/checkPhonePregnant`,
+        url: `/checkPhoneChildren`,
         method: 'POST',
         data: {phone},
         headers: {
@@ -18,7 +18,7 @@ export const apiPregnant= createApi({
     }),
     updateInfo: builder.mutation({
       query: (data) => ({
-        url: `/submitPregnant`,
+        url: `/submitChildren`,
         method: 'POST',
         data,
         headers: {
@@ -29,5 +29,5 @@ export const apiPregnant= createApi({
   }),
 });
 
-export const { useGetInfoPregnantQuery, useUpdateInfoMutation } = apiPregnant;
+export const { useGetInfoQuery, useUpdateInfoMutation } = apiPregnant;
 export default apiPregnant;

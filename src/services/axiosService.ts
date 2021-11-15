@@ -49,7 +49,7 @@ const _callApiFactory = (ROOT: string) => {
     }
     return axiosInstance.request(options).then((response) => {
       return response.data as T;
-    });
+    })
   };
 };
 export default _callApiFactory(API_ROOT);

@@ -5,6 +5,7 @@ import { AxiosError, AxiosRequestConfig } from "axios";
 const apiBase = (): BaseQueryFn<AxiosRequestConfig> => async (requestOptions, { getState }) => {
   try {
     const result = await callApi(requestOptions);
+    console.log("result", result);
     return { data: result};
   } catch (axiosError) {
     let err = axiosError as AxiosError
