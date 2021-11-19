@@ -7,18 +7,18 @@
     "static/js/2.a81732a2.chunk.js": "/daihocy/static/js/2.a81732a2.chunk.js",
     "static/js/2.a81732a2.chunk.js.map": "/daihocy/static/js/2.a81732a2.chunk.js.map",
     "main.css": "/daihocy/static/css/main.756cbb54.chunk.css",
-    "main.js": "/daihocy/static/js/main.961bcd19.chunk.js",
-    "main.js.map": "/daihocy/static/js/main.961bcd19.chunk.js.map",
-    "runtime-main.js": "/daihocy/static/js/runtime-main.cd293925.js",
-    "runtime-main.js.map": "/daihocy/static/js/runtime-main.cd293925.js.map",
-    "static/js/5.b1ae774e.chunk.js": "/daihocy/static/js/5.b1ae774e.chunk.js",
-    "static/js/5.b1ae774e.chunk.js.map": "/daihocy/static/js/5.b1ae774e.chunk.js.map",
+    "main.js": "/daihocy/static/js/main.35783576.chunk.js",
+    "main.js.map": "/daihocy/static/js/main.35783576.chunk.js.map",
+    "runtime-main.js": "/daihocy/static/js/runtime-main.f63b83ab.js",
+    "runtime-main.js.map": "/daihocy/static/js/runtime-main.f63b83ab.js.map",
+    "static/js/5.2b973a2e.chunk.js": "/daihocy/static/js/5.2b973a2e.chunk.js",
+    "static/js/5.2b973a2e.chunk.js.map": "/daihocy/static/js/5.2b973a2e.chunk.js.map",
     "static/js/6.f5a12ec8.chunk.js": "/daihocy/static/js/6.f5a12ec8.chunk.js",
     "static/js/6.f5a12ec8.chunk.js.map": "/daihocy/static/js/6.f5a12ec8.chunk.js.map",
     "static/js/7.fe821d10.chunk.js": "/daihocy/static/js/7.fe821d10.chunk.js",
     "static/js/7.fe821d10.chunk.js.map": "/daihocy/static/js/7.fe821d10.chunk.js.map",
-    "static/js/8.ce1be233.chunk.js": "/daihocy/static/js/8.ce1be233.chunk.js",
-    "static/js/8.ce1be233.chunk.js.map": "/daihocy/static/js/8.ce1be233.chunk.js.map",
+    "static/js/8.78769edf.chunk.js": "/daihocy/static/js/8.78769edf.chunk.js",
+    "static/js/8.78769edf.chunk.js.map": "/daihocy/static/js/8.78769edf.chunk.js.map",
     "static/js/9.85fde00d.chunk.js": "/daihocy/static/js/9.85fde00d.chunk.js",
     "static/js/9.85fde00d.chunk.js.map": "/daihocy/static/js/9.85fde00d.chunk.js.map",
     "static/js/10.2a80a4f0.chunk.js": "/daihocy/static/js/10.2a80a4f0.chunk.js",
@@ -30,7 +30,7 @@
     "index.html": "/daihocy/index.html",
     "static/css/main.756cbb54.chunk.css.map": "/daihocy/static/css/main.756cbb54.chunk.css.map",
     "static/js/0.1ebf8bcc.chunk.js.LICENSE.txt": "/daihocy/static/js/0.1ebf8bcc.chunk.js.LICENSE.txt",
-    "static/js/5.b1ae774e.chunk.js.LICENSE.txt": "/daihocy/static/js/5.b1ae774e.chunk.js.LICENSE.txt",
+    "static/js/5.2b973a2e.chunk.js.LICENSE.txt": "/daihocy/static/js/5.2b973a2e.chunk.js.LICENSE.txt",
     "static/media/index.css": "/daihocy/static/media/pregnant-small.68cc5b67.jpg",
     "static/media/children.ebe9b7b0.png": "/daihocy/static/media/children.ebe9b7b0.png",
     "static/media/female.212b8cc6.png": "/daihocy/static/media/female.212b8cc6.png",
@@ -39,9 +39,9 @@
     "static/media/pregnant.fb365339.png": "/daihocy/static/media/pregnant.fb365339.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.cd293925.js",
-    "static/js/5.b1ae774e.chunk.js",
+    "static/js/runtime-main.f63b83ab.js",
+    "static/js/5.2b973a2e.chunk.js",
     "static/css/main.756cbb54.chunk.css",
-    "static/js/main.961bcd19.chunk.js"
+    "static/js/main.35783576.chunk.js"
   ]
 }
