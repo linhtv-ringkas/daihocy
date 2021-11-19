@@ -26,6 +26,7 @@
     "axios-extensions": "^3.1.3",
     "classnames": "^2.3.1",
     "dayjs": "^1.10.7",
+    "env-cmd": "^10.1.0",
     "gh-pages": "^3.2.3",
     "https": "^1.0.0",
     "lodash": "^4.17.21",
@@ -44,10 +45,12 @@
   "scripts": {
     "start": "TAILWIND_MODE=watch craco start",
     "build": "craco build",
+    "build:production": "env-cmd -f .env.production craco build",
+    "build:dev": "env-cmd -f .env.dev craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build"
+    "predeploy": "rm -rf node_modules/.cache/gh-pages & npm run build:production",
+    "deploy": "gh-pages -b release_1.0.0 -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -70,6 +73,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.176",
     "@types/react-router-dom": "^5.3.2",
+    "@types/tailwindcss": "^2.2.4",
     "autoprefixer": "^9.8.8",
     "chokidar-cli": "^3.0.0",
     "postcss": "^7.0.39",

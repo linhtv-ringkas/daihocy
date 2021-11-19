@@ -20,6 +20,7 @@ const App: React.FC<{}> = () => {
         <Route path="/children" element={<ChildrenPage/>}/>
         {/*Home*/}
         <Route path="/" element={<HomePage/>}/>
+        <Route path="*" element={<div>No Found</div>} />
       </Routes>
     </React.Suspense>
   );
